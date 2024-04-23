@@ -249,8 +249,8 @@ func (hc *HandlerContext) HandleGetSenderInfo(c *gin.Context) {
 			//if balance, err := hc.getSenderBalance(senderAddr); err != nil {
 			c.AbortWithError(http.StatusInternalServerError, err)
 		} else {
-			c.JSON(http.StatusOK, fmt.Sprintf(`{"nonce":%v, "sender": "%v", "balance":%v}`,
-				nonce.Int64(), senderAddr.String(), 0))
+			c.JSON(http.StatusOK, fmt.Sprintf(`{"nonce":%v, "sender": "%v"}`,
+				nonce.Int64(), senderAddr.String()))
 		}
 	}
 }
